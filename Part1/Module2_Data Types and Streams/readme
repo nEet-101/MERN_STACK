@@ -1,0 +1,118 @@
+#   📊 JavaScript Data Types
+
+## 🏗️ Two Main Categories
+
+### 1. **Primitive Data Types** 🎯
+- **String** - Text data
+- **Number** - Numeric values
+- **Undefined** - Variable declared but not assigned
+- **Null** - Intentional empty value
+- **Boolean** - true/false
+- **Symbol** - Unique identifiers
+- **BigInt** - Large integers
+
+### 2. **Reference Data Types** 🔗
+- **Arrays** - Ordered collections
+- **Objects** - Key-value pairs
+- **Functions** - Reusable code blocks
+
+---
+
+## 🔄 Copy Behavior
+
+### **Primitive Types** → **Value Copy**
+```javascript
+let a = 10;
+let b = a;  // Actual value is copied
+b = 20;
+console.log(a); // 10 (unchanged)
+```
+
+### **Reference Types** → **Reference Copy**
+```javascript
+let arr1 = [1, 2, 3];
+let arr2 = arr1;  // Reference to original is copied
+arr2.push(4);
+console.log(arr1); // [1, 2, 3, 4] (original changed!)
+```
+
+---
+
+## 🎭 Dynamic Typing
+
+JavaScript uses **dynamic typing** - variables can change types freely!
+
+```javascript
+let variable = 12;        // 🟢 Number
+variable = true;          // 🟢 Boolean
+variable = "Hello";       // 🟢 String
+// All perfectly valid! ✅
+```
+
+---
+
+## 🔄 Type Coercion
+
+**Automatic type conversion** in operations:
+
+### **➕ Addition/Concatenation**
+```javascript
+"5" + 1 = "51"    // String concatenation
+"Hello" + 2 = "Hello2"
+```
+
+### **➖ Subtraction**
+```javascript
+"5" - 1 = 4       // Numeric subtraction
+"10" - "2" = 8
+```
+
+---
+
+## ✅❌ Truthy & Falsy Values
+
+### **Falsy Values** (Evaluate to `false`):
+- `false`
+- `0`
+- `""` (empty string)
+- `null`
+- `undefined`
+- `NaN`
+- `document.all` (browser-specific)
+
+### **Truthy Values** (Evaluate to `true`):
+- Everything else! ✅
+
+---
+
+## 🤔 Common Confusions
+
+### **1. Why is `NaN` a number type?**
+```javascript
+typeof NaN === 'number'  // true
+```
+**Explanation:** `NaN` represents a "failed number operation", so it's categorized under the number type.
+
+### **2. `undefined` vs `null`**
+- **`undefined`** → Automatic by JavaScript engine
+  ```javascript
+  let x;
+  console.log(x); // undefined
+  ```
+
+- **`null`** → Intentional empty value (set by programmer)
+  ```javascript
+  let y = null;  // Will assign value later
+  ```
+
+---
+
+## 💡 Key Takeaways
+- **Primitive** = Value copy 🎯
+- **Reference** = Reference copy 🔗
+- **Dynamic typing** = Flexible types 🎭
+- **Type coercion** = Automatic conversion 🔄
+- **Falsy values** = 7 specific cases ❌
+
+**Master these concepts for better JavaScript understanding!** 🚀
+

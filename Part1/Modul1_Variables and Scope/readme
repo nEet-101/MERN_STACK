@@ -1,0 +1,4 @@
+var let const
+var -> function scoped and can be redeclared [not a good thing] 
+let -> block scoped and cannot be redeclared
+const -> block scoped and cannot be reassigned

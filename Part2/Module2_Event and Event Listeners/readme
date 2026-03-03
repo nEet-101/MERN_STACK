@@ -1,0 +1,7 @@
+Common Event Handlers Performed:-
+- 'click'
+- 'dblclick'
+- 'input'
+- 'change'
+    - Eg: To find what element has been selected in select tag.
+            obj -> target -> value = 'actual content of element which has been selected'

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Btn | Task</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+
+        #main{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2f2f2f;
+        }
+
+        #file{
+            display: none;
+        }
+
+        #main #btn{
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 7px;
+            color: white;
+            background-color: rgb(62, 173, 159);
+            font-weight: 500;
+        }
+
+        #main #btn:hover{
+            background-color: rgba(45, 145, 131, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <input type="file" name="" id="file">
+        <button id="btn">Upload File</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
