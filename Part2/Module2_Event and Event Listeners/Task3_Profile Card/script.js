@@ -30,4 +30,11 @@ form.addEventListener("submit", function (dets) {
     card.appendChild(p);
 
     main.appendChild(card);
+
+    //after card creation, blank the input fields
+    inputs.forEach(function (inp) {
+        if(inp.type !== "submit"){
+            inp.value="";
+        }
+    });
 }); 
