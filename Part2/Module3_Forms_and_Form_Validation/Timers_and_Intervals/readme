@@ -1,0 +1,179 @@
+Here’s your **README.md** file content for the `Timer-and-Interval` folder 👇
+
+---
+
+# ⏳ JavaScript Timers: setTimeout & setInterval
+
+This document explains JavaScript timing functions in a simple and clear way.
+
+JavaScript provides built-in timer functions to execute code after a delay or repeatedly at fixed intervals.
+
+---
+
+# 📌 1️⃣ setTimeout()
+
+## ✅ Definition
+
+`setTimeout()` executes a function **once** after a specified delay (in milliseconds).
+
+> 1000 milliseconds = 1 second
+
+---
+
+## 🧠 Syntax
+
+```js
+setTimeout(function, delay);
+```
+
+---
+
+## 📌 Example
+
+```js
+setTimeout(() => {
+  console.log("Hello after 2 seconds");
+}, 2000);
+```
+
+👉 This runs **only once** after 2 seconds.
+
+---
+
+## 🎯 Key Points
+
+* Executes only once
+* Works asynchronously
+* Does not block the rest of the code
+* Returns a **timer ID**
+
+---
+
+# 📌 2️⃣ setInterval()
+
+## ✅ Definition
+
+`setInterval()` executes a function **repeatedly** after a specified delay.
+
+---
+
+## 🧠 Syntax
+
+```js
+setInterval(function, delay);
+```
+
+---
+
+## 📌 Example
+
+```js
+setInterval(() => {
+  console.log("Runs every 1 second");
+}, 1000);
+```
+
+👉 This runs every 1 second continuously.
+
+---
+
+## 🎯 Key Points
+
+* Executes repeatedly
+* Runs until stopped
+* Returns a **timer ID**
+
+---
+
+# 📌 3️⃣ clearTimeout()
+
+## ✅ Definition
+
+`clearTimeout()` cancels a scheduled timeout before it executes.
+
+---
+
+## 🧠 Syntax
+
+```js
+clearTimeout(timeoutID);
+```
+
+---
+
+## 📌 Example
+
+```js
+let timer = setTimeout(() => {
+  console.log("Will not run");
+}, 3000);
+
+clearTimeout(timer);
+```
+
+👉 The timeout is cancelled and will not execute.
+
+---
+
+# 📌 4️⃣ clearInterval()
+
+## ✅ Definition
+
+`clearInterval()` stops a running interval.
+
+---
+
+## 🧠 Syntax
+
+```js
+clearInterval(intervalID);
+```
+
+---
+
+## 📌 Example
+
+```js
+let counter = setInterval(() => {
+  console.log("Running...");
+}, 1000);
+
+clearInterval(counter);
+```
+
+👉 Stops the repeated execution.
+
+---
+
+# 🧠 Important Concept: Timer ID
+
+Both `setTimeout()` and `setInterval()` return a **Timer ID**.
+
+This ID is required to stop them using:
+
+* `clearTimeout()`
+* `clearInterval()`
+
+---
+
+# 📊 Quick Comparison
+
+| Function        | Runs How Many Times? | Needs to Be Cleared? |
+| --------------- | -------------------- | -------------------- |
+| setTimeout()    | Once                 | Optional             |
+| setInterval()   | Repeatedly           | Usually Yes          |
+| clearTimeout()  | Stops timeout        | —                    |
+| clearInterval() | Stops interval       | —                    |
+
+---
+
+# 🎯 Summary
+
+* `setTimeout()` → Runs code once after delay
+* `setInterval()` → Runs code repeatedly after delay
+* `clearTimeout()` → Cancels timeout
+* `clearInterval()` → Stops interval
+
+---
+
+✨ These timer functions are essential for building features like loaders, animations, countdown timers, auto-refresh, slideshows, and more.
