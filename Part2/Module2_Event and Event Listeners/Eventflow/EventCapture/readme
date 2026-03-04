@@ -1,0 +1,98 @@
+📌 Event Capturing in JavaScript
+📖 What is Event Capturing?
+
+Event Capturing (also called Trickling) is the phase where an event starts from the top of the DOM tree and travels downward to the target element.
+
+In simple words:
+
+The event moves from parent → child before reaching the actual clicked element.
+
+🌳 How It Works (Conceptual Flow)
+
+If we have this structure:
+
+<div id="parent">
+  <button id="child">Click Me</button>
+</div>
+
+When the button is clicked, during capturing phase, the event flows like this:
+
+document
+
+<html>
+
+<body>
+
+<div id="parent">
+
+<button id="child"> (target)
+
+This downward movement is called Event Capturing.
+
+🧠 Event Flow in JavaScript (Complete Order)
+
+Every DOM event has three phases:
+
+Capturing Phase (Top → Target) ⬇️
+
+Target Phase
+
+Bubbling Phase (Target → Top) ⬆️
+
+By default, JavaScript event listeners work in the bubbling phase, not capturing.
+
+🔧 How to Enable Event Capturing
+
+To use capturing, you must explicitly enable it:
+
+element.addEventListener("click", handlerFunction, true);
+
+or
+
+element.addEventListener("click", handlerFunction, { capture: true });
+
+The third parameter true enables capturing phase.
+
+📌 Example
+document.getElementById("parent").addEventListener("click", function() {
+  console.log("Parent clicked (Capturing)");
+}, true);
+
+document.getElementById("child").addEventListener("click", function() {
+  console.log("Child clicked");
+});
+
+When clicking the button, output will be:
+
+Parent clicked (Capturing)
+Child clicked
+
+Because capturing runs before bubbling.
+
+🛑 Stop Capturing
+
+You can stop propagation in capturing phase also using:
+
+event.stopPropagation();
+
+This stops the event from continuing further.
+
+🚀 Why Event Capturing is Useful?
+
+Useful when you want parent logic to run before child logic
+
+Helps control event flow precisely
+
+Important in advanced UI handling scenarios
+
+✅ Summary
+
+Event flows from top → target
+
+Not enabled by default
+
+Enabled using { capture: true }
+
+Runs before bubbling phase
+
+Can be stopped using stopPropagation()

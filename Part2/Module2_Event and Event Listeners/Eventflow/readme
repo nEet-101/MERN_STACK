@@ -1,0 +1,58 @@
+✅ Which Event Occurs First?
+
+Event Capturing occurs first.
+
+📌 Complete Event Flow Order:
+
+Whenever an event happens (like a click), it follows three phases:
+
+Capturing Phase ⬇️ (Top → Target)
+
+Target Phase 🎯
+
+Bubbling Phase ⬆️ (Target → Top)
+
+So the correct order is:
+
+Capturing → Target → Bubbling
+🧠 Simple Example
+
+If you click a button inside a div:
+
+<div>
+  <button>Click Me</button>
+</div>
+
+The event travels like this:
+
+document
+
+html
+
+body
+
+div
+
+button (target)
+
+div
+
+body
+
+html
+
+document
+
+⬇️ First it goes down (capturing)
+🎯 Reaches target
+⬆️ Then it goes up (bubbling)
+
+🚀 Important Note
+
+By default, JavaScript listens in the bubbling phase
+
+Capturing only happens if you explicitly enable it using { capture: true }
+
+🎯 Final Answer:
+
+Event Capturing happens first, then Target phase, then Event Bubbling.

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capture</title>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+        }
+        
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+
+        #a{
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+
+        #b{
+            width: 300px;
+            height: 300px;
+            background-color: bisque;
+        }
+
+        #c{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="a"> A
+        <div id="b"> B
+            <div id="c"> C
+                <button>Click me</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+📌 Event Bubbling in JavaScript
+📖 What is Event Bubbling?
+
+Event Bubbling is a mechanism in JavaScript where an event starts from the target element (the element that triggered the event) and then propagates upward through its parent elements in the DOM tree.
+
+In simple words:
+
+When you click a child element, the event also triggers on its parent, then grandparent, and so on.
+
+🌳 How It Works (Conceptual Flow)
+
+If we have this structure:
+
+<div id="parent">
+  <button id="child">Click Me</button>
+</div>
+
+When the button is clicked:
+
+Event triggers on <button>
+
+Then moves to <div>
+
+Then to <body>
+
+Then to <html>
+
+Finally to document
+
+This upward movement is called Event Bubbling.
+
+🧠 Why It Happens?
+
+Because the DOM is structured like a tree, and events naturally propagate through this tree.
+
+Event flow has 3 phases:
+
+Capturing Phase (top → target)
+
+Target Phase
+
+Bubbling Phase (target → top) ✅
+
+By default, JavaScript handles events in the bubbling phase.
+
+🛑 How to Stop Event Bubbling
+
+You can stop bubbling using:
+
+event.stopPropagation();
+
+This prevents the event from moving to parent elements.
+
+🚀 Why Event Bubbling is Useful?
+
+Enables Event Delegation
+
+Improves performance (attach one listener to parent instead of many children)
+
+Makes dynamic elements easier to manage
+
+📌 Example
+document.getElementById("parent").addEventListener("click", function() {
+  console.log("Parent clicked");
+});
+
+document.getElementById("child").addEventListener("click", function(event) {
+  console.log("Child clicked");
+});
+
+Clicking the button will log:
+
+Child clicked
+Parent clicked
+
+Because of Event Bubbling.
